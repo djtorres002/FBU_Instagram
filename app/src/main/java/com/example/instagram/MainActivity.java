@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.actionLogout:
                 logoutUser();
                 return true;
-            // Case R.id.actionSettings
-            // open settings activity
             default:
                 return true;
         }
