@@ -38,4 +38,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+
+    // Implementation for a toolbar
+    implementation 'androidx.appcompat:appcompat:1.0.0'
 }
