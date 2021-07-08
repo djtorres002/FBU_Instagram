@@ -17,4 +17,35 @@
         android:background="?attr/colorPrimary">
     </androidx.appcompat.widget.Toolbar>
 
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btTakePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etDescription"
+        android:text="Take Picture" />
+
+    <Button
+        android:id="@+id/btSubmit"
+        android:layout_below="@+id/ivPicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post" />
+
+    <ImageView
+        android:id="@+id/ivPicture"
+        android:layout_below="@+id/btTakePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </RelativeLayout>
