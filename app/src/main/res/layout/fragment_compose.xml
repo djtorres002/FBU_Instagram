@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.ComposeFragment">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
@@ -30,16 +29,17 @@
 
         <Button
             android:id="@+id/btSubmit"
-            android:layout_below="@+id/ivPicture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/ivPicture"
             android:text="Post" />
 
         <ImageView
             android:id="@+id/ivPicture"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
             android:layout_below="@+id/btTakePicture"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
 
     </RelativeLayout>

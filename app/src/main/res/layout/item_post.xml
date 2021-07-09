@@ -12,6 +12,7 @@
         android:layout_margin="6dp"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:layout_toEndOf="@+id/ivProfile"
         tools:text="Anthony" />
 
     <ImageView
@@ -22,11 +23,17 @@
         android:layout_centerHorizontal="true"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivImage"
+        android:layout_below="@+id/btLike"
         android:layout_margin="6dp"
         tools:text="This is a test description!!" />
 
@@ -38,5 +45,36 @@
         android:layout_marginTop="5dp"
         android:layout_marginStart="6dp"
         android:text="TextView" />
+
+    <ImageButton
+        android:id="@+id/btLike"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ivImage"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ufi_heart" />
+
+    <ImageButton
+        android:id="@+id/btComment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ivImage"
+        android:layout_toEndOf="@+id/btLike"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ufi_comment"
+        android:text="Button" />
+
+    <ImageButton
+        android:id="@+id/btDm"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ivImage"
+        android:layout_toEndOf="@+id/btComment"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ufi_new_direct"
+        android:text="Button" />
 
 </RelativeLayout>

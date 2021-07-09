@@ -1,6 +1,8 @@
 package com.example.instagram.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,13 +13,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.instagram.MainActivity;
 import com.example.instagram.R;
+import com.example.instagram.models.DetailsActivity;
 import com.example.instagram.models.Post;
+
+import org.parceler.Parcels;
 
 import java.util.Date;
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
+
+    public static final String TAG = "PostAdapter";
 
     List<Post> postList;
     Context context;
@@ -75,6 +83,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tvTime = itemView.findViewById(R.id.tvTime);
         }
 
+
+
         public void bind(Post post){
             tvUser.setText(post.getUser().getUsername());
             tvDescription.setText(post.getDescription());
@@ -83,10 +93,25 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                     .override(410, 250)
                     .centerCrop()
                     .into(ivPicture);
-
+            ivPicture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "go to details");
+                    goToDetails(post);
+                }
+            });
             Date createdAt = post.getCreatedAt();
             String timeAgo = Post.calculateTimeAgo(createdAt);
             tvTime.setText(timeAgo);
+        }
+
+        private void goToDetails(Post post) {
+            Intent i = new Intent(context, DetailsActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            // Using parcels to pass a post to detail activity
+            // "post" is our key and post variable is our value that we are passing
+            i.putExtra("post", Parcels.wrap(post));
+            context.startActivity(i);
         }
     }
 }

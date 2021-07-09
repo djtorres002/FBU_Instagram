@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // This creates our manager and starts the home fragment
         fragmentManager = getSupportFragmentManager();
@@ -119,10 +120,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void goToLogin() {
+    public void goToLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
+
 
 }
